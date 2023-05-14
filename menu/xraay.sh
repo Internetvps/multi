@@ -1237,7 +1237,8 @@ echo "$jum2";
 echo ""
 echo -e "\e[$line══════════════════════════════════════════\e[m"
 fi
-rm -rf /tmp/ipvmess.txt
+total=$(cat /var/log/xray/access.log | grep -w $useracc | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
+rm -rf /tmp/ipvless.txt
 rm -rf /tmp/other.txt
 done
 echo ""
